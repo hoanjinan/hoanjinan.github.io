@@ -952,18 +952,100 @@ ga('send', 'pageview');
 <h2 id="introducing-vectorising"><a class="markdownIt-Anchor" href="#introducing-vectorising"></a> Introducing Vectorising</h2>
 <p>The process that we use to convert text to a form that Python and a machine learning model can understand is called vectorizing.  This is defined as the process of encoding text as integers to create feature vectors.  Now if you don’t have much machine learning experience, you may be wondering what a feature vector is.  A feature vector is an n-dimensional vector of numerical features that represent some object.  So in our context, that means we’ll be taking an individual text message and converting it to a numeric vector that represents that text message.</p>
 <p>Based on the following example, what we’re doing when we vectorize text is we’re taking this dataset that has one line per document with the cell entry as the actual text message and then we’re converting it to a matrix that still has one line per document, but then you have every word used across all documents as the columns of your matrix.  And then within each cell is counting how many times that certain word appeared in that document.  And this is called your document term matrix.  We’ll be referring to this term quite a bit.  Then once we have this numeric representation of each text message, then we can carry on down the pipeline and fit and train a model.</p>
-<p>| body_text | call | claim | free | txt | label |<br>
-| :-------: | :—: |<br>
-| Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005 Text FA to 87121 to receive … | 0 | 0 | 1 | 1 | spam |<br>
-| Nah I dont think he goes to usf he lives around here though | 0 | 0 | 0 | 0 | ham |<br>
-| Even my brother is not like to speak with me They treat me like aids patent. | 0 | 0 | 0 | 0 | ham |<br>
-| I HAVE A DATE ON SUNDAY WITH WILL!! | 0 | 0 | 0 | 0 | ham |<br>
-| As per your request ‘Melle Melle (Oru Minnaminunginte Nurungu Vettam)’ has been set as your call… | 0 | 0 | 0 | 0 | ham |<br>
-| WINNER!! As a valued network customer you have been selected to receivea £900 prize reward! To c… | 1 | 2 | 0 | 0 | spam |<br>
-| Had your mobile 11 months or more? U R entitled to Update to the latest colour mobiles with came… | 1 | 0 | 2 | 0 | spam |<br>
-| I’m gonna be home soon and i don’t want to talk about this stuff anymore tonight, k? I’ve cried … | 0 | 0 | 0 | 0 | ham |<br>
-| SIX chances to win CASH! From 100 to 20,000 pounds txt&gt; CSH11 and send to 87575. Cost 150p/day, … | 0 | 0 | 0 | 1 | spam |<br>
-| URGENT! You have won a 1 week FREE membership in our £100,000 Prize Jackpot! Txt the word: CLAIM… | 0 | 1 | 1 | 1 | spam |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">body_text</th>
+<th style="text-align:center">call</th>
+<th style="text-align:center">claim</th>
+<th style="text-align:center">free</th>
+<th style="text-align:center">txt</th>
+<th style="text-align:center">label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005 Text FA to 87121 to receive …</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">spam</td>
+</tr>
+<tr>
+<td style="text-align:center">Nah I dont think he goes to usf he lives around here though</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">ham</td>
+</tr>
+<tr>
+<td style="text-align:center">Even my brother is not like to speak with me They treat me like aids patent.</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">ham</td>
+</tr>
+<tr>
+<td style="text-align:center">I HAVE A DATE ON SUNDAY WITH WILL!!</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">ham</td>
+</tr>
+<tr>
+<td style="text-align:center">As per your request ‘Melle Melle (Oru Minnaminunginte Nurungu Vettam)’ has been set as your call…</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">ham</td>
+</tr>
+<tr>
+<td style="text-align:center">WINNER!! As a valued network customer you have been selected to receivea £900 prize reward! To c…</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">spam</td>
+</tr>
+<tr>
+<td style="text-align:center">Had your mobile 11 months or more? U R entitled to Update to the latest colour mobiles with came…</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">spam</td>
+</tr>
+<tr>
+<td style="text-align:center">I’m gonna be home soon and i don’t want to talk about this stuff anymore tonight, k? I’ve cried …</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">ham</td>
+</tr>
+<tr>
+<td style="text-align:center">SIX chances to win CASH! From 100 to 20,000 pounds txt&gt; CSH11 and send to 87575. Cost 150p/day, …</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">spam</td>
+</tr>
+<tr>
+<td style="text-align:center">URGENT! You have won a 1 week FREE membership in our £100,000 Prize Jackpot! Txt the word: CLAIM…</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">spam</td>
+</tr>
+</tbody>
+</table>
 <p>To understand the motivation behind this process, as we mentioned previously that when looking at a word, Python only sees characters.  So we need to convert this into a format that Python can understand in order for our machine learning models to start to learn what certain words indicate about the overall sentence or document or label that we’re trying to predict.  So we vectorize this text to create a matrix that only has numeric entries.  So in our case, counting how many times each word appears in each text message.  The machine learning algorithm understands these counts.  So if it sees a one or a two or a three in a cell, then that model can start to correlate that with whatever we’re trying to predict.  In our case, that’s spam.  To roughly understand then, what the words, sentences, and documents represent.  So in our context, this means it can use how frequently these certain words appear to determine whether the individual text message is spam or not.</p>
 <p>Original:</p>
 <table>
