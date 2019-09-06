@@ -650,13 +650,48 @@ ga('send', 'pageview');
 <p>Clean up text:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">clean_text</span><span class="params">(text)</span>:</span></span><br><span class="line">    text = <span class="string">""</span>.join([word <span class="keyword">for</span> word <span class="keyword">in</span> text <span class="keyword">if</span> word <span class="keyword">not</span> <span class="keyword">in</span> string.punctuation])</span><br><span class="line">    tokens = re.split(<span class="string">'\W+'</span>, text)</span><br><span class="line">    text = [word <span class="keyword">for</span> word <span class="keyword">in</span> tokens <span class="keyword">if</span> word <span class="keyword">not</span> <span class="keyword">in</span> stopwords]</span><br><span class="line">    <span class="keyword">return</span> text</span><br><span class="line"></span><br><span class="line">data[<span class="string">'body_text_nostop'</span>] = data[<span class="string">'body_text'</span>].apply(<span class="keyword">lambda</span> x: clean_text(x.lower()))</span><br><span class="line"></span><br><span class="line">data.head()</span><br></pre></td></tr></table></figure>
 <p>Output:</p>
-<p>|     | label | body_text | body_text_nostop |<br>
-| :-: | :—: | :-------: | [free, entry, 2, wkly, comp, win, fa, cup, final, tkts, 21st, may, 2005, text, fa, 87121, receiv… |<br>
-|  0  |  spam | Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005 Text FA to 87121 to receive … | [nah, dont, think, goes, usf, lives, around, though] |<br>
-|  1  |  ham  | Nah I dont think he goes to usf he lives around here though |<br>
-|  2  |  ham  | Even my brother is not like to speak with me They treat me like aids patent. | [even, brother, like, speak, treat, like, aids, patent] |<br>
-|  3  |  ham  | I HAVE A DATE ON SUNDAY WITH WILL!! | [date, sunday] |<br>
-|  4  |  ham  | As per your request ‘Melle Melle (Oru Minnaminunginte Nurungu Vettam)’ has been set as your call… | [per, request, melle, melle, oru, minnaminunginte, nurungu, vettam, set, callertune, callers, pr… |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">label</th>
+<th style="text-align:center">body_text</th>
+<th style="text-align:center">body_text_nostop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">spam</td>
+<td style="text-align:center">Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005 Text FA to 87121 to receive …</td>
+<td style="text-align:center">[free, entry, 2, wkly, comp, win, fa, cup, final, tkts, 21st, may, 2005, text, fa, 87121, receiv…</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">ham</td>
+<td style="text-align:center">Nah I dont think he goes to usf he lives around here though</td>
+<td style="text-align:center">[nah, dont, think, goes, usf, lives, around, though]</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">ham</td>
+<td style="text-align:center">Even my brother is not like to speak with me They treat me like aids patent.</td>
+<td style="text-align:center">[even, brother, like, speak, treat, like, aids, patent]</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">ham</td>
+<td style="text-align:center">I HAVE A DATE ON SUNDAY WITH WILL!!</td>
+<td style="text-align:center">[date, sunday]</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">ham</td>
+<td style="text-align:center">As per your request ‘Melle Melle (Oru Minnaminunginte Nurungu Vettam)’ has been set as your call…</td>
+<td style="text-align:center">[per, request, melle, melle, oru, minnaminunginte, nurungu, vettam, set, callertune, callers, pr…</td>
+</tr>
+</tbody>
+</table>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Zilan Huang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://hoanjinan.github.io/2019/09/02/Natural-Language-Processing/">http://hoanjinan.github.io/2019/09/02/Natural-Language-Processing/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Data-Science/">Data Science    </a><a class="post-meta__tags" href="/tags/Data-Processing/">Data Processing    </a><a class="post-meta__tags" href="/tags/Machine-Learning/">Machine Learning    </a><a class="post-meta__tags" href="/tags/AI/">AI    </a></div><div class="post_share"><div class="social-share" data-image="https://live.staticflickr.com/65535/48621182898_91a9c4cc04_o.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-buttom"><i class="fa fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lozad post-qr-code__img" src="/img/wechat.jpeg"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lozad post-qr-code__img" src="/img/alipay.jpeg"><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="next-post pull-full"><a href="/2019/08/20/Spark-for-Machine-Learning-AI/"><img class="next_cover lozad" data-src="https://live.staticflickr.com/65535/48621537921_7855b8a711_o.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>Spark for Machine Learning and AI</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/08/20/Spark-for-Machine-Learning-AI/" title="Spark for Machine Learning and AI"><img class="relatedPosts_cover lozad" data-src="https://live.staticflickr.com/65535/48621537921_7855b8a711_o.jpg"><div class="relatedPosts_title">Spark for Machine Learning and AI</div></a></div><div class="relatedPosts_item"><a href="/2019/08/19/Hadoop-Environment-Setup/" title="Hadoop Environment Setup"><img class="relatedPosts_cover lozad" data-src="https://live.staticflickr.com/65535/48621680177_6107d2deaf_o.png"><div class="relatedPosts_title">Hadoop Environment Setup</div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> Comment</span></div><div id="disqus_thread"></div><script>var unused = null;
 var disqus_config = function () {
   this.page.url = 'http://hoanjinan.github.io/2019/09/02/Natural-Language-Processing/';
