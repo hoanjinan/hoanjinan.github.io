@@ -55,9 +55,9 @@
       
         <tags>
             
-            <tag> Data Science </tag>
-            
             <tag> Big Data </tag>
+            
+            <tag> Data Science </tag>
             
             <tag> Data Processing </tag>
             
@@ -94,10 +94,6 @@
       
         <tags>
             
-            <tag> Data Science </tag>
-            
-            <tag> Big Data </tag>
-            
             <tag> Setup </tag>
             
             <tag> Environment </tag>
@@ -105,6 +101,10 @@
             <tag> Installation </tag>
             
             <tag> Configuration </tag>
+            
+            <tag> Big Data </tag>
+            
+            <tag> Data Science </tag>
             
         </tags>
       
