@@ -2541,38 +2541,38 @@ ga('send', 'pageview');
 <tbody>
 <tr>
 <td>-2</td>
-<td>$$ y ^ {-2} $$</td>
-<td>$$ \frac{1}{y^2} $$</td>
+<td>$$y ^ {-2}$$</td>
+<td>$$\frac{1}{y^2}$$</td>
 </tr>
 <tr>
 <td>-1</td>
-<td>$$ y ^ {-1} $$</td>
-<td>$$ \frac{1}{y} $$</td>
+<td>$$y ^ {-1}$$</td>
+<td>$$\frac{1}{y}$$</td>
 </tr>
 <tr>
 <td>-0.5</td>
-<td>$$ y ^ {\frac{-1}{2}} $$</td>
-<td>$$ \frac{1}{\sqrt{y}} $$</td>
+<td>$$y ^ {\frac{-1}{2}}$$</td>
+<td>$$\frac{1}{\sqrt{y}}$$</td>
 </tr>
 <tr>
 <td>0</td>
-<td>$$ y^{0} $$</td>
-<td>$$ log(y) $$</td>
+<td>$$y^{0}$$</td>
+<td>$$log(y)$$</td>
 </tr>
 <tr>
 <td>0.5</td>
-<td>$$ y ^ {\frac{1}{2}}  $$</td>
-<td>$$ \sqrt{y} $$</td>
+<td>$$y ^ {\frac{1}{2}}$$</td>
+<td>$$\sqrt{y}$$</td>
 </tr>
 <tr>
 <td>1</td>
-<td>$$ y^{1} $$</td>
-<td>$$ y $$</td>
+<td>$$y^{1}$$</td>
+<td>$$y$$</td>
 </tr>
 <tr>
 <td>2</td>
-<td>$$ y^{2} $$</td>
-<td>$$ y^2 $$</td>
+<td>$$y^{2}$$</td>
+<td>$$y^2$$</td>
 </tr>
 </tbody>
 </table>
@@ -2588,37 +2588,37 @@ ga('send', 'pageview');
 <tbody>
 <tr>
 <td style="text-align:center">50</td>
-<td style="text-align:center">$$ {\frac{1}{50}}^2 = \frac{1}{2500} $$</td>
+<td style="text-align:center">$${\frac{1}{50}}^2 = \frac{1}{2500}$$</td>
 <td style="text-align:center">0.0004</td>
 </tr>
 <tr>
 <td style="text-align:center">50</td>
-<td style="text-align:center">$$ \frac{1}{50} $$</td>
+<td style="text-align:center">$$\frac{1}{50}$$</td>
 <td style="text-align:center">0.02</td>
 </tr>
 <tr>
 <td style="text-align:center">50</td>
-<td style="text-align:center">$$ \frac{1}{\sqrt{50}} = \frac{1}{7.07} $$</td>
+<td style="text-align:center">$$\frac{1}{\sqrt{50}} = \frac{1}{7.07}$$</td>
 <td style="text-align:center">0.14</td>
 </tr>
 <tr>
 <td style="text-align:center">50</td>
-<td style="text-align:center">$$ log(50) $$</td>
+<td style="text-align:center">$$log(50)$$</td>
 <td style="text-align:center">1.7</td>
 </tr>
 <tr>
 <td style="text-align:center">50</td>
-<td style="text-align:center">$$ \sqrt{50} $$</td>
+<td style="text-align:center">$$\sqrt{50}$$</td>
 <td style="text-align:center">7.07</td>
 </tr>
 <tr>
 <td style="text-align:center">50</td>
-<td style="text-align:center">$$ 50 $$</td>
+<td style="text-align:center">$$50$$</td>
 <td style="text-align:center">50</td>
 </tr>
 <tr>
 <td style="text-align:center">50</td>
-<td style="text-align:center">$$ 50^2 $$</td>
+<td style="text-align:center">$$50^2$$</td>
 <td style="text-align:center">2500</td>
 </tr>
 </tbody>
@@ -2668,26 +2668,14 @@ ga('send', 'pageview');
 <p><img alt="5-Fold Cross Validation" data-src="https://live.staticflickr.com/65535/48797105293_5830d4ae16_o.png" class="lozad"></p>
 <p>The above image is a example of what cross validation actually looks like.  In this example, we’ll start with a full data set of 10,000 examples and we want to run five fold cross validation.  So again, that means k equals five.  So the first step is to split that 10,000 example data set into k or five subsets.  So you’ll see that we now have five subsets of data and each has 2,000 examples.  So this is sampling without replacement, so all 10,000 examples are still accounted for and it’s worth noting that these subsets will remain the same throughout this entire process.  So an example in subset one will remain in subset one all the way through the end of this cross validation.  We assign one of these subsets as a test set, which is subset five in red here and then we assign the other four that are in blue to the training set.  Now we’ll fit a model on the 8,000 examples in blue and then we’ll evaluate the model on the 2,000 example test set in red and then we’ll record the performance metric and store that away in an array.  To be clear this is all handled under the hood in Psychic Learn.  You don’t have to manually implement these steps, you’ll see when we actually write this with code that Psychic Learn handles all this but it’s important for you to understand what it’s doing when it carries out this process.  Again you’ll pick an evaluation metric and after the first iteration it’ll store the performance of the model on the holdout test set.  So here we’re saying that’s .867.  Next we’ll move on to the second iteration, where now the fourth subset is the test set and subsets one through three along with the fifth one are now the training set.  So again, we’ll re-fit a brand new model on these 8,000 training examples and evaluate on the 2,000 test examples in that fourth subset.  And then we’ll store the performance metric, here we’re saying that’s .884.  Then again for the third iteration, the third subset will be or test set and then model will be trained on the 8,000 examples in the first, second, fourth and fifth.  So you train a brand new model evaluate it on the third subset, store the performance metric here we’ll say it’s .901.  Again for the fourth iteration, same process as before but now the second subset is our holdout test set.  Last but not least, the first subset is the test set and two through five are the training data.  For the model, evaluate it on the first subset and store the evaluation metric.  Now it’s worth noting that at this point, every subset and thus every example has been used in a training set four times and in an evaluation set once.  So we have now used this model configuration to fit a model on all different combinations of these examples and evaluated it on every single point in this data set.  So you can see why this can be a really powerful tool to gauge a model’s ability to generalize.  And then lastly, you would normally output maybe the full array of scores so all five scores or you might just output the simple average.  So the average is .885.  But now we see a more robust gauge of what the potential outcome of this model would be.  So let’s just say we’re using a single holdout test set and using that to gauge the performance of the model for our business.  Now the first iteration you’ll get a score of .867 but in average overall five is .885 and the highest is .901.  So that’s a difference of .018 from the lowest score to the average and .34 from the lowest score to the highest score.  That may not seem like a big difference but in a business setting where this could impact millions of dollars, that’s a huge difference.  So having a read on how this model performs over five different test sets is a huge advantage to truly understanding how your model might perform in the real world.  Now this gives us more confidence that the model will perform around .885 and gives us a range of plausible outcomes or some error of ours on the projection.</p>
 <p>So let’s talk about actual evaluation metrics now. So for a classification problem like this spam ham data set that we’re working with, we’ll generally use three main performance metrics.</p>
-<ol>
-<li>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>c</mi><mi>c</mi><mi>u</mi><mi>r</mi><mi>a</mi><mi>c</mi><mi>y</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">#</mi><mi>p</mi><mi>r</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>c</mi><mi>t</mi><mi>e</mi><mi>d</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>t</mi><mi>l</mi><mi>y</mi></mrow><mrow><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mi mathvariant="normal">#</mi><mi>o</mi><mi>f</mi><mi>o</mi><mi>b</mi><mi>s</mi><mi>e</mi><mi>r</mi><mi>v</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>s</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">Accuracy = \frac{\# predicted correctly}{total \# of observations}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault">c</span><span class="mord mathdefault">c</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.25188em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="mord mathdefault">o</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord">#</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">o</span><span class="mord mathdefault">b</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">i</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">#</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">d</span><span class="mord mathdefault">i</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault">d</span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-</li>
-</ol>
 <p>The first is accuracy shown above, so that’s just the number that you’ve predicted correctly over the total number of observations.  So if you have 10,000 observations and you’ve got 800 of them labeled correctly then your accuracy is 80%.</p>
-<ol start="2">
-<li>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>i</mi><mi>s</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">#</mi><mi>p</mi><mi>r</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>c</mi><mi>t</mi><mi>e</mi><mi>d</mi><mi>a</mi><mi>s</mi><mi>s</mi><mi>p</mi><mi>a</mi><mi>m</mi><mi>t</mi><mi>h</mi><mi>a</mi><mi>t</mi><mi>a</mi><mi>r</mi><mi>e</mi><mi>a</mi><mi>c</mi><mi>t</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>l</mi><mi>y</mi><mi>s</mi><mi>p</mi><mi>a</mi><mi>m</mi></mrow><mrow><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mi mathvariant="normal">#</mi><mi>p</mi><mi>r</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>c</mi><mi>t</mi><mi>e</mi><mi>d</mi><mi>a</mi><mi>s</mi><mi>s</mi><mi>p</mi><mi>a</mi><mi>m</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">Precision = \frac{\# predicted as spam that are actually spam}{total \# predicted as spam}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.25188em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="mord mathdefault">o</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord">#</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">d</span><span class="mord mathdefault">i</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault">d</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault">s</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">#</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">d</span><span class="mord mathdefault">i</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault">d</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault">s</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault">u</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord mathdefault">s</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-</li>
-</ol>
 <p>The second metric is precision as shown above.  Within the context of the problem that we’re working with, that would be represented by the number that the model predicted as spam that are actually spam divided by the total number that the model predicted as spam.</p>
-<ol start="3">
-<li>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>i</mi><mi>s</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">#</mi><mi>p</mi><mi>r</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>c</mi><mi>t</mi><mi>e</mi><mi>d</mi><mi>a</mi><mi>s</mi><mi>s</mi><mi>p</mi><mi>a</mi><mi>m</mi><mi>t</mi><mi>h</mi><mi>a</mi><mi>t</mi><mi>a</mi><mi>r</mi><mi>e</mi><mi>a</mi><mi>c</mi><mi>t</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>l</mi><mi>y</mi><mi>s</mi><mi>p</mi><mi>a</mi><mi>m</mi></mrow><mrow><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mi mathvariant="normal">#</mi><mi>t</mi><mi>h</mi><mi>a</mi><mi>t</mi><mi>a</mi><mi>r</mi><mi>e</mi><mi>a</mi><mi>c</mi><mi>t</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>l</mi><mi>y</mi><mi>s</mi><mi>p</mi><mi>a</mi><mi>m</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">Precision = \frac{\# predicted as spam that are actually spam}{total \# that are actually spam}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.25188em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="mord mathdefault">o</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord">#</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault">u</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord mathdefault">s</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">#</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">d</span><span class="mord mathdefault">i</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault">d</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault">s</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault">u</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord mathdefault">s</span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-</li>
-</ol>
 <p>The last evaluation metric is called recall presented above, so that would be the number predicted by the model to be spam that are actually spam, so again that’s the same numerator as precision but now it’s just divided by the total number that are actually spam instead of the total number that are predicted as spam.  So that’s accuracy, precision and recall.</p>
 <p><img alt="Evaluation Metrics" data-src="https://live.staticflickr.com/65535/48797105303_cfed29abac_o.png" class="lozad"></p>
 <p>So the above image is the visual representation of precision and recall, you can see that the numerator in both is the same, the amount that you correctly identified but the denominator is different.  Precision is all things that you said were relevant while recall is all the things that are actually relevant.  So in our example relevant means it’s spam.  So now precision recall give you the ability to kind of tailor the aggressiveness of your algorithm based on your business problem.  For instance, if false positives are really costly then you’ll want to optimize your model for precision.  But if false negatives are really costly then you’ll want to optimize the model for recall.  Only knowing accuracy may not really give you incite into this kind of trade off.</p>
